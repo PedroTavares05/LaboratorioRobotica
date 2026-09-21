@@ -1,0 +1,16 @@
+Contexto e problema
+Um laboratório de robótica disponibiliza ferramentas, kits eletrônicos e equipamentos para os estudantes desenvolverem projetos. O empréstimo informal dificulta saber quem é responsável por cada material, quais itens ainda estão fora do laboratório e quais já foram devolvidos.
+
+Objetivo da solução
+Desenvolver uma aplicação em terminal para registrar empréstimos de ferramentas, listar equipamentos em uso, confirmar devoluções, consultar o responsável por cada item e excluir registros indevidos. O controle deve ser mantido em JSON.
+
+Regras de negócio (RN)
+RN01: aluno responsável e equipamento são campos obrigatórios. RN02: a quantidade emprestada deve ser um inteiro com valor mínimo 1. RN03: o status permitido é Pendente ou Devolvido. RN04: um empréstimo devolvido não pode ser devolvido novamente. RN05: não deve ser permitido novo empréstimo do mesmo equipamento enquanto existir registro pendente, quando o controle for unitário.
+
+Sugestão estruturada de menus e funções
+[1] Registrar empréstimo → cadastrar_emprestimo()
+[2] Listar equipamentos em uso → listar_pendentes()
+[3] Buscar responsável ou equipamento → buscar_emprestimo()
+[4] Confirmar devolução → confirmar_devolucao()
+[5] Excluir registro → excluir_emprestimo()
+[0] Sair → salvar_dados()
