@@ -1,0 +1,39 @@
+# Sistema de Gestão de Empréstimos - Laboratório de Robótica
+
+## Descrição
+Aplicação de terminal desenvolvida em Python para controlar o empréstimo e a devolução de ferramentas, kits eletrónicos e equipamentos aos estudantes de um laboratório. O sistema resolve o problema de inventário descontrolado, garantindo o rastreio exato de quem é o responsável por cada material, quais os itens que estão fora do laboratório e a persistência de todo o histórico.
+
+## Funcionalidades
+- **Registar Empréstimo:** Associa um aluno a um equipamento do catálogo, gerando um identificador de transação único e sequencial.
+- **Listar Equipamentos em Uso:** Exibe exclusivamente os materiais com devolução pendente.
+- **Pesquisar Registos:** Permite procurar empréstimos (ativos ou devolvidos) através do nome do aluno ou do equipamento.
+- **Confirmar Devolução:** Exibe a lista de peças e acessórios que compõem o equipamento para exigir a conferência física do operador antes de fechar o empréstimo.
+- **Excluir Registo:** Remove permanentemente transações inválidas ou canceladas.
+- **Persistência em JSON:** Os dados são guardados e lidos automaticamente do disco rígido, garantindo que não há perda de informação ao fechar o programa.
+
+## Estrutura de Ficheiros
+O projeto está dividido para separar a interface da lógica de dados:
+- `main.py`: Ponto de entrada da aplicação. Gere a exibição do menu, a navegação e o encaminhamento das ações.
+- `Func.py`: Módulo *back-end* que contém o processamento estrutural, as validações e as operações de leitura e escrita.
+- `catalogo.json`: Ficheiro gerado automaticamente que armazena os equipamentos físicos e a sua composição.
+- `registros.json`: Ficheiro gerado automaticamente que atua como base de dados transacional de todos os empréstimos.
+
+## Regras de Negócio (RN) Implementadas
+O código impõe as seguintes regras de forma rigorosa:
+- **RN01:** O nome do aluno e o ID do equipamento são campos de validação obrigatória.
+- **RN02:** A quantidade por registo de empréstimo é estritamente unitária.
+- **RN03:** O estado de uma transação transita unicamente entre "Pendente" e "Devolvido".
+- **RN04:** Bloqueio de redundância: um registo classificado como "Devolvido" não pode sofrer nova devolução.
+- **RN05:** Bloqueio de concorrência: o sistema impede um novo empréstimo de um ID de equipamento que já conste no histórico com o estado "Pendente".
+
+## Como Executar
+
+### Pré-requisitos
+- Python 3.x instalado. Não requer bibliotecas externas fora da *standard library*.
+
+### Instalação e Execução
+1. Coloca os ficheiros `main.py` e `Func.py` no mesmo diretório.
+2. Abre o terminal (ou PowerShell/CMD) na pasta do projeto.
+3. Executa o comando:
+   ```bash
+   python main.py
