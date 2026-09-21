@@ -1,6 +1,7 @@
 from Func import *
+import time
 
-# As listas de composição continuam aqui em cima se assim o exigires
+
 lista_kit_arduino = ["Placa Arduino Uno R3", "Cabo USB", "Protoboard 400 furos"]
 lista_multimetro = ["Multímetro Digital", "Pontas de prova", "Bateria 9V"]
 lista_ferro_solda = ["Ferro de solda 40W", "Suporte metálico", "Tubo de estanho"]
@@ -45,16 +46,35 @@ while True:
     
     if Entrada == "1":
         cadastrar_emprestimo(registros_emprestimos, equipamentos_cadastrados)
+        time.sleep(3)
+        LimparTela()
     elif Entrada == "2":
         listar_pendentes(registros_emprestimos)
+        time.sleep(3)
+        LimparTela()
     elif Entrada == "3":
         buscar_emprestimo(registros_emprestimos)
+        time.sleep(3)
+        LimparTela()
     elif Entrada == "4":
         confirmar_devolucao(registros_emprestimos, equipamentos_cadastrados)
+        time.sleep(3)
+        LimparTela()
     elif Entrada == "5":
         excluir_emprestimo(registros_emprestimos)
+        time.sleep(3)
+        LimparTela()
     elif Entrada == "0":
         salvar_dados(registros_emprestimos)
+        time.sleep(1)
+        LimparTela()
+        print("Saindo do programa...")
+        time.sleep(1)
+        print("Saindo do programa...")
+        time.sleep(1)
+        print("Saindo do programa...")
         break
     else:
         print("ERRO: Opção inválida.")
+        time.sleep(2)
+        LimparTela()

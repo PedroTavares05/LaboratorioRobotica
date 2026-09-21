@@ -1,4 +1,7 @@
 import json
+import os
+def LimparTela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def cadastrar_emprestimo(registros, catalogo):
     aluno = input("Nome do aluno: ").strip()
@@ -12,13 +15,11 @@ def cadastrar_emprestimo(registros, catalogo):
         print("ERRO: O ID deve ser um número inteiro.")
         return
 
-    # Valida catálogo
     equipamento_encontrado = next((eq for eq in catalogo if eq["id_equipamento"] == id_desejado), None)
     if not equipamento_encontrado:
         print("ERRO: Equipamento não existe no sistema.")
         return
 
-    # Valida RN05
     if any(reg["id_equipamento"] == id_desejado and reg["status"] == "Pendente" for reg in registros):
         print(f"ERRO: O equipamento '{equipamento_encontrado['nome']}' já está em empréstimo.")
         return
@@ -63,6 +64,7 @@ def buscar_emprestimo(registros):
     print(f"\n--- RESULTADOS PARA '{termo.upper()}' ---")
     for reg in resultados:
         print(f"ID Reg: {reg['id_registro']} | Equipamento: {reg['equipamento']} | Aluno: {reg['aluno']} | Status: {reg['status']}")
+      
 
 
 def confirmar_devolucao(registros, catalogo):
@@ -82,7 +84,7 @@ def confirmar_devolucao(registros, catalogo):
         print("ERRO: Este equipamento já consta como Devolvido. (RN04)")
         return
 
-    # Mostra os acessórios para conferência física
+
     equipamento_cat = next((eq for eq in catalogo if eq["id_equipamento"] == registro["id_equipamento"]), {})
     itens = equipamento_cat.get("itens_inclusos", [])
     
