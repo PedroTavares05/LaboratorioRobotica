@@ -29,7 +29,6 @@ while True:
     elif Entrada == "5":
         excluir_emprestimo(registros_emprestimos)
     elif Entrada == "0":
-        # A gravação já é feita nas funções, mas forçamos uma última vez por segurança
         salvar_dados(registros_emprestimos) 
         LimparTela()
         print("A sair do programa...")
