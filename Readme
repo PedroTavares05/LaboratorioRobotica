@@ -1,3 +1,10 @@
+# Sistema de Empréstimos - Laboratório de Robótica
+
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/pedrotavares05/laboratoriorobotica?utm_source=readme&utm_medium=badge)
+
+## Arquitetura do Sistema
+
+![Diagrama de fluxo e persistência de dados](diagram.jpg)
 # Sistema de Gestão de Empréstimos - Laboratório de Robótica
 
 ## Descrição
