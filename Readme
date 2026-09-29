@@ -1,6 +1,8 @@
 # Sistema de Gestão de Empréstimos - Laboratório de Robótica
 
-[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/pedrotavares05/laboratoriorobotica?utm_source=readme&utm_medium=badge)
+Architecture diagram
+(https://gitdiagram.com/diagram-badge.svg)
+(https://gitdiagram.com/pedrotavares05/laboratoriorobotica?utm_source=readme&utm_medium=badge)
 
 ## Descrição
 Aplicação de terminal desenvolvida em Python para controlar o empréstimo e a devolução de ferramentas, kits eletrónicos e equipamentos aos estudantes de um laboratório. O sistema resolve o problema de inventário descontrolado, garantindo o rastreio exato de quem é o responsável por cada material, quais os itens que estão fora do laboratório e a persistência de todo o histórico.
